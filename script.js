@@ -50,3 +50,8 @@ let userCount = 0;
 let computerCount = 0;
 let drawCount = 0;
 
+for (let i=0; i < 5; i++ ){
+    inputValidation();
+    computerPlay();
+}
+
