@@ -30,20 +30,23 @@ function computerPlay () {
 //whoWins Fx was copied from other exercise
 function whoWins ( computerChoice, userInput){
     if (computerChoice === userInput){
-        return "Draw";
+        drawCount++;
+        return 
     }
     else if ((computerChoice == "rock" && userInput == "paper") || (computerChoice == "paper" && userInput == "scissor") || (computerChoice == "scissors" && userInput == "rock")) {
-        return "User Wins";
+        userCount++;
+        return
     }
     else {
-        return "computer wins";
+        computerCount++;
+        return
     }        
 }
 
 
 let userInput;
 let computerChoice;
-let userCount;
-let computerCount;
-let drawCount;
+let userCount = 0;
+let computerCount = 0;
+let drawCount = 0;
 
