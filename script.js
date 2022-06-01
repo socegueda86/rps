@@ -30,9 +30,10 @@ function computerPlay () {
 }
 
 //whoWins Fx was copied from other exercise
-function whoWins ( computerChoice, userInput){
-    if (computerChoice === userInput){
+function whoWins (){
+    if (userInput === computerChoice){
         drawCount++;
+        console.log("whowhins FX if, computer", computerChoice, userInput)
         return 
     }
     else if ((computerChoice == "rock" && userInput == "paper") || (computerChoice == "paper" && userInput == "scissor") || (computerChoice == "scissors" && userInput == "rock")) {
@@ -46,7 +47,7 @@ function whoWins ( computerChoice, userInput){
 }
 
 function whoWinsMatch(){
-    if ( userCount == computerCount){
+    if ( computerChoice == computerCount){
         console.log("it's a Draw");
     }
     else if (userCount > computerCount) {
@@ -56,6 +57,8 @@ function whoWinsMatch(){
         console.log("Computer wins")
     }
     else{console.log("something went wrong")}
+
+    pruebaMod = "This only to see if the function can affect a Global variable"
 
 }
 
@@ -67,15 +70,18 @@ let computerCount = 0;
 let drawCount = 0;
 let playsCounter = 0;
 
+let pruebaMod; // ("This only to see if the function can affect a Global variable")
+
 for (let i=0; i < 5; i++ ){
     inputValidation();
     if (userInput == "exitSignal"){break;}
     computerPlay();
-    whoWins();
-    if (i < 4){
+    whoWins(userCount, computerCount);
+    if (i = 4){
         whoWinsMatch() 
     }
 }
+
 
 
 
