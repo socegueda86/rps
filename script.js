@@ -33,7 +33,6 @@ function computerPlay () {
 function whoWins (){
     if (userInput === computerChoice){
         drawCount++;
-        console.log("whowhins FX if, computer", computerChoice, userInput)
         return 
     }
     else if ((computerChoice == "rock" && userInput == "paper") || (computerChoice == "paper" && userInput == "scissor") || (computerChoice == "scissors" && userInput == "rock")) {
@@ -47,7 +46,7 @@ function whoWins (){
 }
 
 function whoWinsMatch(){
-    if ( computerChoice == computerCount){
+    if ( userCount == computerCount){
         console.log("it's a Draw");
     }
     else if (userCount > computerCount) {
@@ -56,10 +55,11 @@ function whoWinsMatch(){
     else if (userCount < computerCount){
         console.log("Computer wins")
     }
-    else{console.log("something went wrong")}
+    else{
+        console.log("something went wrong")
+    }
 
     pruebaMod = "This only to see if the function can affect a Global variable"
-
 }
 
 
