@@ -11,7 +11,8 @@ function inputValidation (){
     }
 }
 
-function computerPlay () {
+//computerPlay function was copied from past exercise
+function computerPlay () { 
 
         switch (Math.floor(Math.random()*3+1)) {
         case 1 :
@@ -26,6 +27,7 @@ function computerPlay () {
     }
 }
 
+//whoWins Fx was copied from other exercise
 function whoWins ( computerChoice, userInput){
     if (computerChoice === userInput){
         return "Draw";
@@ -44,3 +46,4 @@ let computerChoice;
 let userCount;
 let computerCount;
 let drawCount;
+
