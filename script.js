@@ -1,7 +1,9 @@
 function inputValidation (){
     while (true){
         userInput = prompt ("Choose between: Rock, Paper o Scissors","")
-        if (typeof userInput != 'string') return;
+        if (typeof userInput != 'string') {
+            userInput = "exitSignal";
+            return;}
 
         userInput = userInput.toLowerCase();
 
@@ -49,9 +51,14 @@ let computerChoice;
 let userCount = 0;
 let computerCount = 0;
 let drawCount = 0;
+let playsCounter = 0;
 
 for (let i=0; i < 5; i++ ){
     inputValidation();
+    if (userInput == exitSignal){break;}
     computerPlay();
+    whoWins();
 }
+
+
 
