@@ -53,7 +53,7 @@ function whoWinsMatch(){
     else if (userCount > computerCount) {
         console.log("User wins");
     }
-    else if (userCount > computerCount){
+    else if (userCount < computerCount){
         console.log("Computer wins")
     }
     else{console.log("something went wrong")}
