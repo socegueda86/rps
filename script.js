@@ -45,6 +45,20 @@ function whoWins ( computerChoice, userInput){
     }        
 }
 
+function whoWinsMatch(){
+    if ( userCount == computerCount){
+        console.log("it's a Draw");
+    }
+    else if (userCount > computerCount) {
+        console.log("User wins");
+    }
+    else if (userCount > computerCount){
+        console.log("Computer wins")
+    }
+    else{console.log("something went wrong")}
+
+}
+
 
 let userInput;
 let computerChoice;
@@ -55,10 +69,17 @@ let playsCounter = 0;
 
 for (let i=0; i < 5; i++ ){
     inputValidation();
-    if (userInput == exitSignal){break;}
+    if (userInput == "exitSignal"){break;}
     computerPlay();
     whoWins();
+    if (i < 4){
+        whoWinsMatch() 
+    }
 }
+
+
+
+
 
 
 
