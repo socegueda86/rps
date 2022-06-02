@@ -59,7 +59,8 @@ function whoWinsMatch(){
         console.log("something went wrong")
     }
 
-    pruebaMod = "This only to see if the function can affect a Global variable"
+    
+    
 }
 
 
@@ -70,14 +71,13 @@ let computerCount = 0;
 let drawCount = 0;
 let playsCounter = 0;
 
-let pruebaMod; // ("This only to see if the function can affect a Global variable")
 
-for (let i=0; i < 5; i++ ){
+for (let i = 0; i < 5; i++ ){
     inputValidation();
     if (userInput == "exitSignal"){break;}
     computerPlay();
     whoWins(userCount, computerCount);
-    if (i = 4){
+    if (i == 4){
         whoWinsMatch() 
     }
 }
