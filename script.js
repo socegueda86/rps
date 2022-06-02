@@ -1,18 +1,3 @@
-/*function inputValidation (){
-    while (true){
-        userInput = prompt ("Choose between: Rock, Paper o Scissors","")
-        if (typeof userInput != 'string') {
-            userInput = "exitSignal";
-            return;}
-
-        userInput = userInput.toLowerCase();
-
-        if (userInput == "rock" || userInput == "paper" || userInput == "scissors"){
-            return userInput;
-        }
-    }
-}*/
-
 //computerPlay function was copied from past exercise
 function computerPlay () { 
 
@@ -31,21 +16,19 @@ function computerPlay () {
 
 //whoWins Fx was copied from other exercise
 function whoWins (){
-    console.log(userInput, computerChoice)
-
-    if (userInput === computerChoice){
+    
+    if (userInput == computerChoice){
         console.log("it's a Draw");
         drawCount++;
         return 
     }
-    else if ((computerChoice == "rock" && userInput == "paper") || (computerChoice == "paper" && userInput == "scissor") || (computerChoice == "scissors" && userInput == "rock")) {
+    else if ((computerChoice == "rock" && userInput == "paper") || (computerChoice == "paper" && userInput == "scissor") || (
+        computerChoice == "scissors" && userInput == "rock")) {
         console.log("User wins");
         userCount++;
         return
     }
     else {
-    console.log(typeof userInput, typeof  computerChoice)
-
         console.log("Computer wins")
         computerCount++;
         return
@@ -54,13 +37,13 @@ function whoWins (){
 
 function whoWinsGame(){
     if ( userCount == computerCount){
-        console.log("it's a Draw");
+        console.log("The game it's a Draw");
     }
     else if (userCount > computerCount) {
-        console.log("User wins");
+        console.log("User wins the game");
     }
     else if (userCount < computerCount){
-        console.log("Computer wins")
+        console.log("Computer wins the game")
     }
     else{
         console.log("something went wrong")
