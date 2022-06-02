@@ -1,4 +1,4 @@
-function inputValidation (){
+/*function inputValidation (){
     while (true){
         userInput = prompt ("Choose between: Rock, Paper o Scissors","")
         if (typeof userInput != 'string') {
@@ -11,7 +11,7 @@ function inputValidation (){
             return userInput;
         }
     }
-}
+}*/
 
 //computerPlay function was copied from past exercise
 function computerPlay () { 
@@ -31,15 +31,22 @@ function computerPlay () {
 
 //whoWins Fx was copied from other exercise
 function whoWins (){
+    console.log(userInput, computerChoice)
+
     if (userInput === computerChoice){
+        console.log("it's a Draw");
         drawCount++;
         return 
     }
     else if ((computerChoice == "rock" && userInput == "paper") || (computerChoice == "paper" && userInput == "scissor") || (computerChoice == "scissors" && userInput == "rock")) {
+        console.log("User wins");
         userCount++;
         return
     }
     else {
+    console.log(typeof userInput, typeof  computerChoice)
+
+        console.log("Computer wins")
         computerCount++;
         return
     }        
@@ -58,9 +65,6 @@ function whoWinsGame(){
     else{
         console.log("something went wrong")
     }
-
-    
-    
 }
 
 
@@ -69,18 +73,35 @@ let computerChoice;
 let userCount = 0;
 let computerCount = 0;
 let drawCount = 0;
-let playsCounter = 0;
+let matchCounter = 0;
 
 
-for (let i = 0; i < 5; i++ ){
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+      userInput = button.textContent.toLowerCase();
+      computerPlay();
+      whoWins()
+      matchCounter++;
+      if (matchCounter == 4){
+        whoWinsGame()
+        matchCounter = 0; 
+      }
+    });
+  });
+
+
+
+/*for (let i = 0; i < 5; i++ ){
     inputValidation();
-    if (userInput == "exitSignal"){break;}
-    computerPlay();
+  //  if (userInput == "exitSignal"){break;}*/
+    /*computerPlay();
     whoWins(userCount, computerCount);
-    if (i == 4){
-        whoWinsGame() 
-    }
-}
+    
+  //  }
+//}
 
 
 
