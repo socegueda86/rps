@@ -45,7 +45,7 @@ function whoWins (){
     }        
 }
 
-function whoWinsMatch(){
+function whoWinsGame(){
     if ( userCount == computerCount){
         console.log("it's a Draw");
     }
@@ -78,13 +78,14 @@ for (let i = 0; i < 5; i++ ){
     computerPlay();
     whoWins(userCount, computerCount);
     if (i == 4){
-        whoWinsMatch() 
+        whoWinsGame() 
     }
 }
 
 
 
-
+/* The program already works, I need to add the console.log() elements that
+ show the scoreboard and the winer each iteration*/
 
 
 
