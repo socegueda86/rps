@@ -38,15 +38,15 @@ function whoWins (){
 function whoWinsGame(){
     if ( userCount == computerCount){
        // console.log("The game it's a Draw");
-       return "Draw"
+       return "It's a Draw"
     }
     else if (userCount > computerCount) {
         //console.log("User wins the game");
-        return "User"
+        return "User wins"
     }
     else if (userCount < computerCount){
         // console.log("Computer wins the game")
-        return "computer"
+        return "Computer wins"
     }
     else{
         console.log("something went wrong")
@@ -75,6 +75,7 @@ const winner = document.querySelector('.who-wins');
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
       button.addEventListener('click', () => {
+      if (drawCount == 0) {winner.textContent = "";} // This will make the counter back to blank after the 5th game
       userInput = button.textContent.toLowerCase();
       computerPlay();
       comparison.textContent = "Your play:    " + userInput.toUpperCase() +
@@ -89,11 +90,13 @@ buttons.forEach((button) => {
   
       if (matchCounter == 5){
         whoWinsGame()
-        winner.textContent = "the winner is: ";// + whoWinsGame() //important note aparently you cannot return a string
+        console.log(whoWinsGame() + "test")
+        winner.textContent = whoWinsGame();// + whoWinsGame() //important note aparently you cannot return a string
         matchCounter = 0;
         userCount = 0;
         computerCount = 0;
         drawCount = 0;
+                
       }
     });
   });
