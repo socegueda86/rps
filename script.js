@@ -18,20 +18,17 @@ function computerPlay () {
 function whoWins (){
     
     if (userInput == computerChoice){
-        console.log("it's a Draw");
         drawCount++;
-        return 
+        return "it's a Draw";
     }
     else if ((computerChoice == "rock" && userInput == "paper") || (computerChoice == "paper" && userInput == "scissor") || (
         computerChoice == "scissors" && userInput == "rock")) {
-        console.log("User wins");
         userCount++;
-        return
+        return "User wins";
     }
     else {
-        console.log("Computer wins")
         computerCount++;
-        return
+        return "Computer wins"
     }        
 }
 
@@ -78,9 +75,10 @@ buttons.forEach((button) => {
       if (drawCount == 0) {winner.textContent = "";} // This will make the counter back to blank after the 5th game
       userInput = button.textContent.toLowerCase();
       computerPlay();
+      matchWinner.textContent = whoWins();
       comparison.textContent = "Your play:    " + userInput.toUpperCase() +
        "  Computer play: " + computerChoice.toUpperCase();
-      whoWins()
+      
       scoreboard.textContent = "Scoreboard:  User " + userCount + " Computer: " + 
       computerCount + " Draws: "+ drawCount + " Matches: " + (matchCounter + 1) ;
   
