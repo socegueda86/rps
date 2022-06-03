@@ -3,7 +3,11 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center; */
+}
+
+ul {
+    margin: 0 auto;
 }
 
 li button {
@@ -33,5 +37,20 @@ li button span{
 
 .who-wins{
     font-size: large;
+}
 
+.choice-compare{
+    
+    background-color: green;
+    justify-content: space-around;
+    
+}
+
+h1, h2 {
+    margin: 0 auto;
+}
+
+div{
+    display: flex;
+    margin: 0 auto;
 }

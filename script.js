@@ -63,7 +63,8 @@ let drawCount = 0;
 let matchCounter = 0;
 
 const scoreboard = document.querySelector('.scoreboard');
-const comparison = document.querySelector('.choice-compare');
+const comparisonUser = document.querySelector('.choice-compare #user');
+const comparisonComp = document.querySelector('.choice-compare #computer');
 const matchWinner = document.querySelector('.match-winner')
 const winner = document.querySelector('.who-wins');
 
@@ -76,8 +77,8 @@ buttons.forEach((button) => {
       userInput = button.textContent.toLowerCase();
       computerPlay();
       matchWinner.textContent = whoWins();
-      comparison.textContent = "Your play:    " + userInput.toUpperCase() +
-       "  Computer play: " + computerChoice.toUpperCase();
+      comparisonUser.textContent = "Your play: " + userInput.toUpperCase() 
+      comparisonComp.textContent = "Computers play: " + computerChoice.toUpperCase();
       
       scoreboard.textContent = "Scoreboard:  User " + userCount + " Computer: " + 
       computerCount + " Draws: "+ drawCount + " Matches: " + (matchCounter + 1) ;
