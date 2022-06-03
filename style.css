@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-section{
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+    gap: 20px;
+}
+
+.who-wins{
+    font-size: large;
+
+}
