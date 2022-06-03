@@ -37,18 +37,25 @@ function whoWins (){
 
 function whoWinsGame(){
     if ( userCount == computerCount){
-        console.log("The game it's a Draw");
+       // console.log("The game it's a Draw");
+       return "Draw"
     }
     else if (userCount > computerCount) {
-        console.log("User wins the game");
+        //console.log("User wins the game");
+        return "User"
     }
     else if (userCount < computerCount){
-        console.log("Computer wins the game")
+        // console.log("Computer wins the game")
+        return "computer"
     }
     else{
         console.log("something went wrong")
+        
     }
 }
+
+
+
 
 
 let userInput;
@@ -58,38 +65,37 @@ let computerCount = 0;
 let drawCount = 0;
 let matchCounter = 0;
 
+const scoreboard = document.querySelector('.scoreboard');
+const comparison = document.querySelector('.choice-compare');
+const matchWinner = document.querySelector('.match-winner')
+const winner = document.querySelector('.who-wins');
+
 
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
-    // and for each one we add a 'click' listener
-    button.addEventListener('click', () => {
+      button.addEventListener('click', () => {
       userInput = button.textContent.toLowerCase();
       computerPlay();
+      comparison.textContent = "Your play:    " + userInput.toUpperCase() +
+       "  Computer play: " + computerChoice.toUpperCase();
       whoWins()
+      scoreboard.textContent = "Scoreboard:  User " + userCount + " Computer: " + computerCount + " Matches: " + (matchCounter) ;
+  
+  
       matchCounter++;
-      if (matchCounter == 4){
+  
+  
+      if (matchCounter == 5){
         whoWinsGame()
-        matchCounter = 0; 
+        winner.textContent = "the winner is: ";// + whoWinsGame() //important note aparently you cannot return a string
+        matchCounter = 0;
+        userCount = 0;
+        computerCount = 0;
+        drawCount = 0;
       }
     });
   });
-
-
-
-/*for (let i = 0; i < 5; i++ ){
-    inputValidation();
-  //  if (userInput == "exitSignal"){break;}*/
-    /*computerPlay();
-    whoWins(userCount, computerCount);
-    
-  //  }
-//}
-
-
-
-/* The program already works, I need to add the console.log() elements that
- show the scoreboard and the winer each iteration*/
 
 
 
