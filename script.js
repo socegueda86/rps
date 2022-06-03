@@ -80,7 +80,8 @@ buttons.forEach((button) => {
       comparison.textContent = "Your play:    " + userInput.toUpperCase() +
        "  Computer play: " + computerChoice.toUpperCase();
       whoWins()
-      scoreboard.textContent = "Scoreboard:  User " + userCount + " Computer: " + computerCount + " Matches: " + (matchCounter) ;
+      scoreboard.textContent = "Scoreboard:  User " + userCount + " Computer: " + 
+      computerCount + " Draws: "+ drawCount + " Matches: " + (matchCounter + 1) ;
   
   
       matchCounter++;
