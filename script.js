@@ -63,10 +63,15 @@ let drawCount = 0;
 let matchCounter = 0;
 
 const scoreboard = document.querySelector('.scoreboard');
-const comparisonUser = document.querySelector('.choice-compare #user');
-const comparisonComp = document.querySelector('.choice-compare #computer');
+//const comparisonUser = document.querySelector('.choice-compare #user');
+//const comparisonComp = document.querySelector('.choice-compare #computer');
 const matchWinner = document.querySelector('.match-winner')
 const winner = document.querySelector('.who-wins');
+
+
+const comparison = document.querySelector('.choice-compare');
+/*comparison.innerHTML = '<span> "Your play: " + userInput.toUpperCase() </span> <span> "Computers play: " + computerChoice.toUpperCase();</span>'
+*/
 
 
 
@@ -77,10 +82,12 @@ buttons.forEach((button) => {
       userInput = button.textContent.toLowerCase();
       computerPlay();
       matchWinner.textContent = whoWins();
-      comparisonUser.textContent = "Your play: " + userInput.toUpperCase() 
-      comparisonComp.textContent = "Computers play: " + computerChoice.toUpperCase();
-      
-      scoreboard.textContent = "Scoreboard:  User " + userCount + " Computer: " + 
+      //comparisonUser.textContent = "Your play: " + userInput.toUpperCase() 
+      //comparisonComp.textContent = "Computers play: " + computerChoice.toUpperCase();
+    
+      comparison.innerHTML = `<span class= "span1"> Your play: ${userInput.toUpperCase()} </span> <span class= "span2"> Computer's play: ${computerChoice.toUpperCase()}</span>` // check if it works moose
+
+      scoreboard.textContent = "User:   " + userCount + " Computer: " + 
       computerCount + " Draws: "+ drawCount + " Matches: " + (matchCounter + 1) ;
   
   
